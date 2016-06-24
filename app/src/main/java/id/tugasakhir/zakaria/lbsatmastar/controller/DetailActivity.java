@@ -1,4 +1,4 @@
-package id.tugasakhir.zakaria.lbsatmastar;
+package id.tugasakhir.zakaria.lbsatmastar.controller;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -15,6 +15,8 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import id.tugasakhir.zakaria.lbsatmastar.R;
 
 
 public class DetailActivity extends FragmentActivity implements OnMapReadyCallback {

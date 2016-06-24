@@ -1,6 +1,5 @@
-package id.tugasakhir.zakaria.lbsatmastar;
+package id.tugasakhir.zakaria.lbsatmastar.controller;
 
-import android.*;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -30,6 +29,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
 import java.util.List;
 
+import id.tugasakhir.zakaria.lbsatmastar.R;
 import id.tugasakhir.zakaria.lbsatmastar.database.DatabaseHelper;
 import id.tugasakhir.zakaria.lbsatmastar.model.Atm;
 
@@ -46,7 +46,7 @@ public class GMapsActivity extends FragmentActivity implements OnMapReadyCallbac
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gmaps);
+        setContentView(id.tugasakhir.zakaria.lbsatmastar.R.layout.activity_gmaps);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.mapView);

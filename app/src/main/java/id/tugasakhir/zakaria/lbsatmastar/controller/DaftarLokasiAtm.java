@@ -1,10 +1,7 @@
-package id.tugasakhir.zakaria.lbsatmastar;
+package id.tugasakhir.zakaria.lbsatmastar.controller;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.database.Cursor;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -13,7 +10,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -23,7 +19,7 @@ import java.io.OutputStream;
 import java.util.List;
 import java.util.Locale;
 
-import id.tugasakhir.zakaria.lbsatmastar.adapter.DaftarAtmAdapter;
+import id.tugasakhir.zakaria.lbsatmastar.R;
 import id.tugasakhir.zakaria.lbsatmastar.database.DatabaseHelper;
 import id.tugasakhir.zakaria.lbsatmastar.model.Atm;
 

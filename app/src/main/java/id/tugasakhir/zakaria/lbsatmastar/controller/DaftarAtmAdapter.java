@@ -1,11 +1,7 @@
 /**
  * 
  */
-package id.tugasakhir.zakaria.lbsatmastar.adapter;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
+package id.tugasakhir.zakaria.lbsatmastar.controller;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,8 +11,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import id.tugasakhir.zakaria.lbsatmastar.DetailActivity;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 import id.tugasakhir.zakaria.lbsatmastar.R;
 import id.tugasakhir.zakaria.lbsatmastar.model.Atm;
 
