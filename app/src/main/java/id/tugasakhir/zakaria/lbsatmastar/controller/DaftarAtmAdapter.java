@@ -1,6 +1,3 @@
-/**
- * 
- */
 package id.tugasakhir.zakaria.lbsatmastar.controller;
 
 import android.content.Context;
