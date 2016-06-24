@@ -160,7 +160,7 @@ public class GMapsActivity extends FragmentActivity implements OnMapReadyCallbac
             double lat = location.getLatitude();
 
             addBoundaryToCurrentPosition (lat, lng);
-            CameraPosition cameraPosition = new CameraPosition.Builder().target(new LatLng(lat, lng)).zoom(12f).build();
+            CameraPosition cameraPosition = new CameraPosition.Builder().target(new LatLng(lat, lng)).zoom(14f).build();
 
             if (mMap != null)
                 mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
