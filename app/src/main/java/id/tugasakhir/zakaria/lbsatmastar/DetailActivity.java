@@ -11,9 +11,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 
 public class DetailActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -80,6 +86,14 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
         }
         mMap.setMyLocationEnabled(true);
 
+        latitude = getIntent().getDoubleExtra("latitude", latitude);
+        longitude = getIntent().getDoubleExtra("longitude", longitude);
+
+        mMap.addMarker(new MarkerOptions().position(new LatLng(latitude,longitude))).setIcon(BitmapDescriptorFactory.defaultMarker());
+
+        CameraPosition cameraPosition = new CameraPosition.Builder().target(new LatLng(latitude, longitude)).zoom(14f).build();
+
+        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 
     }
 }
