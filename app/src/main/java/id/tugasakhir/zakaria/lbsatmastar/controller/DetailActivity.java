@@ -86,7 +86,7 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
         latitude = getIntent().getDoubleExtra("latitude", latitude);
         longitude = getIntent().getDoubleExtra("longitude", longitude);
 
-        mMap.addMarker(new MarkerOptions().position(new LatLng(latitude,longitude))).setIcon(BitmapDescriptorFactory.defaultMarker());
+        mMap.addMarker(new MarkerOptions().position(new LatLng(latitude,longitude))).setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
 
         CameraPosition cameraPosition = new CameraPosition.Builder().target(new LatLng(latitude, longitude)).zoom(14f).build();
 
