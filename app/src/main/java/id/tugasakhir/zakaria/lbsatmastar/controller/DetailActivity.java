@@ -5,6 +5,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
+import android.view.Menu;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -81,16 +82,17 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
 
             return;
         }
-        mMap.setMyLocationEnabled(true);
+//        mMap.setMyLocationEnabled(true);
 
         latitude = getIntent().getDoubleExtra("latitude", latitude);
         longitude = getIntent().getDoubleExtra("longitude", longitude);
 
-        mMap.addMarker(new MarkerOptions().position(new LatLng(latitude,longitude))).setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(latitude,longitude))).setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
 
         CameraPosition cameraPosition = new CameraPosition.Builder().target(new LatLng(latitude, longitude)).zoom(14f).build();
 
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 
     }
+
 }

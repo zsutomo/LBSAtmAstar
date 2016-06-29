@@ -103,7 +103,7 @@ public class GMapsActivity extends FragmentActivity implements OnMapReadyCallbac
                     .position(new LatLng(atm.getLatitude(), atm.getLongitude()))
                     .title(atm.getNama())
                     .snippet(atm.getAlamat())
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
             );
         }
 

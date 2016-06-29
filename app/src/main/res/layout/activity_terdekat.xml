@@ -26,15 +26,35 @@
     <ListView
         android:id="@+id/listviewTerdekat"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="fill_parent"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
         android:layout_below="@+id/bgjudul"
         android:divider="#d1d1d1"
         android:dividerHeight="2dp">
     </ListView>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Maps"
+            android:id="@+id/buttonmaps"
+            android:textSize="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="2dp"/>
+
+    </RelativeLayout>
 
 
 </RelativeLayout>

@@ -3,16 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".controller.DetailActivity">
-
-    <fragment
-        android:id="@+id/mapView"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        class="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+    tools:context=".controller.DetailActivity"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -28,27 +20,39 @@
             android:textSize="30dp"
             android:textStyle="bold"
             android:textColor="#ffffff"
-            android:layout_marginTop="2dp"
-            android:layout_centerHorizontal="true"/>
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"/>
     </RelativeLayout>
+
+    <fragment
+        android:id="@+id/mapView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/bgdetail"
+        android:layout_below="@+id/bgjudul" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:id="@+id/bgdetail"
-        android:background="#03A9F4"
+        android:background="@drawable/bgdetail"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
         <TextView
-           android:id="@+id/tvnama"
+            android:id="@+id/tvnama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nama :"
             android:textColor="#ffffff"
             android:textStyle="bold"
-            android:layout_marginLeft="5dp"/>
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="4dp"/>
 
         <TextView
             android:id="@+id/tvalamat"
@@ -88,9 +92,19 @@
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:layout_below="@+id/tvlatitude"
-            android:layout_marginLeft="5dp"/>
+            android:layout_marginLeft="5dp" />
     </RelativeLayout>
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Route"
+        android:id="@+id/btn_route"
+        android:textSize="10dp"
+        android:layout_below="@+id/bgjudul"
+        android:layout_marginLeft="2dp"
+        android:clickable="true" />
 
 
 </RelativeLayout>
