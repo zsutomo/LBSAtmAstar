@@ -17,11 +17,11 @@ public class Terdekat extends Activity {
         setContentView(R.layout.activity_terdekat);
 
         Button btnmaps = (Button) findViewById(R.id.buttonmaps);
-        btnmaps.setOnClickListener(onCreate());
+        btnmaps.setOnClickListener(onklik());
 
     }
 
-    private View.OnClickListener onCreate() {
+    private View.OnClickListener onklik() {
         Intent intent = new Intent(getApplicationContext(),TerdekatMaps.class);
         startActivity(intent);
 
