@@ -20,6 +20,8 @@ public class TerdekatMaps extends FragmentActivity implements OnMapReadyCallback
 
     private GoogleMap mMap;
 
+    Button btndaftar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,17 +31,14 @@ public class TerdekatMaps extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.mapView);
         mapFragment.getMapAsync(this);
 
-        Button btnmaps = (Button) findViewById(R.id.buttondaftar);
-        btnmaps.setOnClickListener(onCreate());
+        btndaftar = (Button) findViewById(R.id.buttondaftar);;;
     }
 
-    private View.OnClickListener onCreate() {
-        Intent intent = new Intent(getApplicationContext(), Terdekat.class);
+    public void klikTombolDaftar(View view) {
+        Intent intent = new Intent(this, Terdekat.class);
         startActivity(intent);
-
-        return null;
-
     }
+
 
     @Override
     public void onMapReady(GoogleMap googleMap) {

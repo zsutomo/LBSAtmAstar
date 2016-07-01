@@ -11,21 +11,19 @@ import id.tugasakhir.zakaria.lbsatmastar.R;
 
 public class Terdekat extends Activity {
 
+    Button btnmaps;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_terdekat);
 
-        Button btnmaps = (Button) findViewById(R.id.buttonmaps);
-        btnmaps.setOnClickListener(onklik());
+       btnmaps = (Button) findViewById(R.id.buttonmaps);
 
     }
 
-    private View.OnClickListener onklik() {
-        Intent intent = new Intent(getApplicationContext(),TerdekatMaps.class);
+    public void klikTombolMaps(View view){
+        Intent intent = new Intent(this, TerdekatMaps.class);
         startActivity(intent);
-
-        return null;
     }
-
 }

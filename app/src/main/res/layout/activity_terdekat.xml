@@ -30,10 +30,10 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="10dp"
         android:layout_below="@+id/bgjudul"
         android:divider="#d1d1d1"
-        android:dividerHeight="2dp">
+        android:dividerHeight="2dp"
+        android:layout_above="@+id/relativeLayout">
     </ListView>
 
     <RelativeLayout
@@ -41,7 +41,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:id="@+id/relativeLayout">
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -52,7 +53,10 @@
             android:textSize="10dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginLeft="2dp"/>
+            android:layout_marginLeft="2dp"
+            android:onClick="klikTombolMaps"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
 
