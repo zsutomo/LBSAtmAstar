@@ -1,10 +1,12 @@
 package id.tugasakhir.zakaria.lbsatmastar.controller;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,7 +33,7 @@ public class TerdekatMaps extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.mapView);
         mapFragment.getMapAsync(this);
 
-        btndaftar = (Button) findViewById(R.id.buttondaftar);;;
+        btndaftar = (Button) findViewById(R.id.buttondaftar);
     }
 
     public void klikTombolDaftar(View view) {
@@ -57,4 +59,5 @@ public class TerdekatMaps extends FragmentActivity implements OnMapReadyCallback
         mMap.setMyLocationEnabled(true);
 
     }
+
 }
