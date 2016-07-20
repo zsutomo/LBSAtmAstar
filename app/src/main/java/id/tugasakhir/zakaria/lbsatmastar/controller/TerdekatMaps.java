@@ -39,6 +39,7 @@ public class TerdekatMaps extends FragmentActivity implements OnMapReadyCallback
     public void klikTombolDaftar(View view) {
         Intent intent = new Intent(this, Terdekat.class);
         startActivity(intent);
+        this.finish();
     }
 
 

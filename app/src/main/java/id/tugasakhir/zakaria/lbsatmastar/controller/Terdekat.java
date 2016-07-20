@@ -27,6 +27,7 @@ public class Terdekat extends Activity {
     public void klikTombolMaps(View view){
         Intent intent = new Intent(this, TerdekatMaps.class);
         startActivity(intent);
+        Terdekat.this.finish();
     }
 
 }

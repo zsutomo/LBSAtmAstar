@@ -6,10 +6,12 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.location.Criteria;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.location.LocationProvider;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
@@ -42,6 +44,8 @@ public class GMapsActivity extends FragmentActivity implements OnMapReadyCallbac
     private String provider = null;
     private LocationManager mLocationManager = null;
     private Marker mCurrentPosition;
+    private LatLng latLng;
+    private Location location;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -174,7 +178,7 @@ public class GMapsActivity extends FragmentActivity implements OnMapReadyCallbac
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(new LatLng(lat, lang));
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker());
-        markerOptions.title("My Location");
+        markerOptions.title("mylocation");
         //markerOptions.anchor(0.5f, 0.5f);
 
         CircleOptions mOptions = new CircleOptions()
@@ -187,6 +191,7 @@ public class GMapsActivity extends FragmentActivity implements OnMapReadyCallbac
     }
 
 
+
     @Override
     public void onLocationChanged(Location location) {
         updateWithNewLocation(location);
@@ -195,13 +200,14 @@ public class GMapsActivity extends FragmentActivity implements OnMapReadyCallbac
 
     @Override
     public void onProviderDisabled(String provider) {
-        updateWithNewLocation(null);
+
     }
 
     @Override
     public void onProviderEnabled(String provider) {
-
+        updateWithNewLocation(null);
     }
+
 
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {
