@@ -190,8 +190,6 @@ public class GMapsActivity extends FragmentActivity implements OnMapReadyCallbac
         mCurrentPosition = mMap.addMarker(markerOptions);
     }
 
-
-
     @Override
     public void onLocationChanged(Location location) {
         updateWithNewLocation(location);

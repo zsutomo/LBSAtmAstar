@@ -45,7 +45,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".controller.TerdekatMaps" />
-        <activity android:name=".controller.AddressLocation"></activity>
     </application>
 
 </manifest>
