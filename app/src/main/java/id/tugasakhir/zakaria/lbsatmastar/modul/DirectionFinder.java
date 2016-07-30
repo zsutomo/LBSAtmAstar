@@ -50,7 +50,6 @@ public class DirectionFinder  {
         String urlOrigin = URLEncoder.encode(String.valueOf(origin), "utf-8");
         String urlDestination = URLEncoder.encode(String.valueOf(destination), "utf-8");
 
-        //return DIRECTION_URL_API + "origin=" + urlOrigin + "&destination=" + urlDestination + "&key" + GOOGLE_API_KEY;
         return DIRECTION_URL_API + "origin=" + urlOrigin + "&destination=" + urlDestination+ "&alternatives=true" + "&key" + GOOGLE_API_KEY;
     }
 
