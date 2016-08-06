@@ -149,8 +149,8 @@ public class DetailActivity extends FragmentActivity
         nama = i.getStringExtra("nama");
         alamat = i.getStringExtra("alamat");
         informasi = i.getStringExtra("informasi");
-        latitude = i.getDoubleExtra("latitude", lat);
-        longitude = i.getDoubleExtra("longitude", lng);
+        latitude = i.getDoubleExtra("latitude", latitude);
+        longitude = i.getDoubleExtra("longitude", longitude);
 
         tvnama = (TextView) findViewById(R.id.tvnama);
         tvalamat = (TextView) findViewById(R.id.tvalamat);
@@ -161,8 +161,8 @@ public class DetailActivity extends FragmentActivity
         tvnama.setText("Nama : " + nama);
         tvalamat.setText("Alamat : " + alamat);
         tvinformasi.setText("Informasi : " + informasi);
-        tvlatitude.setText(String.valueOf("Latitude : " + lat));
-        tvlongitude.setText(String.valueOf("Longitude : " + lng));
+        tvlatitude.setText(String.valueOf("Latitude : " + latitude));
+        tvlongitude.setText(String.valueOf("Longitude : " + longitude));
     }
 
     @Override

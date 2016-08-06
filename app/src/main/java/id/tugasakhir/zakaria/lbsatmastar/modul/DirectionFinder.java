@@ -69,16 +69,18 @@ public class DirectionFinder  {
                 while ((line = reader.readLine()) != null) {
                     buffer.append(line + "\n");
                 }
-                return  buffer.toString();
+                link = buffer.toString();
+                Log.d("json", link);
+                return buffer.toString();
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            return null;
+            return link;
         }
 
-        @Override
+            @Override
         protected void onPostExecute(String res) {
             try {
                 parseJSon(res);
@@ -89,45 +91,10 @@ public class DirectionFinder  {
     }
 
     public void parseJSon(String data) throws JSONException {
+        String parse="";
+
         if (data == null)
             return;
-//      try {
-//
-//          List<Route> routes = new ArrayList<Route>();
-//          JSONObject JSONObject = new JSONObject(data);
-//          JSONArray routeJSONArray = JSONObject.getJSONArray("routes");
-//          Route route;
-//          JSONObject routesJSONObject;
-//          for (int i = 0; i < routeJSONArray.length(); i++) {
-//              route = new Route(context);
-//              routesJSONObject = routeJSONArray.getJSONObject(i);
-//              JSONArray legsJSONArray;
-//              route.setSummary(routesJSONObject.getString(SUMMARY));
-//
-//              JSONObject jsonRoute = jsonRoutes.getJSONObject(i);
-//              Route route = new Route();
-//
-//              JSONObject overview_polylineJson = jsonRoute.getJSONObject("overview_polyline");
-//              JSONArray jsonLegs = jsonRoute.getJSONArray("legs");
-//              JSONObject jsonLeg = jsonLegs.getJSONObject(0);
-//              JSONObject jsonDistance = jsonLeg.getJSONObject("distance");
-//              JSONObject jsonDuration = jsonLeg.getJSONObject("duration");
-//              JSONObject jsonEndLocation = jsonLeg.getJSONObject("end_location");
-//              JSONObject jsonStartLocation = jsonLeg.getJSONObject("start_location");
-//
-//              route.distance = new Distance(jsonDistance.getString("text"), jsonDistance.getInt("value"));
-//              route.duration = new Duration(jsonDuration.getString("text"), jsonDuration.getInt("value"));
-//              route.endAddress = jsonLeg.getString("end_address");
-//              route.startAddress = jsonLeg.getString("start_address");
-//              route.startLocation = new LatLng(jsonStartLocation.getDouble("lat"), jsonStartLocation.getDouble("lng"));
-//              route.endLocation = new LatLng(jsonEndLocation.getDouble("lat"), jsonEndLocation.getDouble("lng"));
-//              route.points = decodePolyLine(overview_polylineJson.getString("points"));
-//
-//              routes.add(route);
-//          }
-//          listener.onDirectionFinderSuccess(routes);
-//
-//      }
         List<Route> routes = new ArrayList<Route>();
         JSONObject jsonData = new JSONObject(data);
         JSONArray jsonRoutes = jsonData.getJSONArray("routes");
@@ -152,8 +119,12 @@ public class DirectionFinder  {
             route.points = decodePolyLine(overview_polylineJson.getString("points"));
 
             routes.add(route);
+            parse += "Node"+i+" : \n distance= " +jsonDistance+"\n duration= " +jsonDuration+"\n endAddress= " +route.endAddress+"\n startAddress= "
+                    + route.startAddress+"\n startLocation= "+route.startLocation+"\n endLocation= "+route.endLocation+ "\n";
         }
         listener.onDirectionFinderSuccess(routes);
+        listener.toString();
+        Log.d("parse",parse);
     }
 
     private List<LatLng> decodePolyLine(final String poly) {

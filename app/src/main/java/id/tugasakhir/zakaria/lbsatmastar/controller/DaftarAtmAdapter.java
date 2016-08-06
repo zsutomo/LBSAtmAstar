@@ -1,5 +1,6 @@
 package id.tugasakhir.zakaria.lbsatmastar.controller;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -23,6 +24,7 @@ public class DaftarAtmAdapter extends BaseAdapter {
 	private List<Atm> mAtmList;
 	private ArrayList<Atm> arrayAtmlist;
 	private LayoutInflater inflater;
+	private ProgressDialog progressDialog;
 
 	public  DaftarAtmAdapter(Context mcontext, List<Atm> mAtmList ) {
 		this.mContext = mcontext;

@@ -20,18 +20,18 @@ public class MainActivity extends Activity {
     public void klikTombolMenu(View v) {
         Intent intent;
         switch (v.getId()) {
-            case R.id.button1:
+            case R.id.btn_pencarian:
                 intent = new Intent(this, DaftarLokasiAtm.class);
                 startActivity(intent);
                 break;
-            case R.id.button2:
+            case R.id.btn_bantuan:
                 intent = new Intent(this, GMapsActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.button3:
-                intent = new Intent(this, Terdekat.class);
-                startActivity(intent);
-                break;
+//            case R.id.button3:
+//                intent = new Intent(this, Terdekat.class);
+//                startActivity(intent);
+//                break;
             default:
                 break;
         }

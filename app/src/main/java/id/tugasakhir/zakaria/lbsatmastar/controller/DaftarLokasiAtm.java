@@ -1,6 +1,7 @@
 package id.tugasakhir.zakaria.lbsatmastar.controller;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
@@ -30,6 +31,7 @@ public class DaftarLokasiAtm extends Activity {
     private List<Atm> atmList;
     private DaftarAtmAdapter AtmAdapter;
     EditText editText;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,8 @@ public class DaftarLokasiAtm extends Activity {
         mDBHelper = new DatabaseHelper(this);
 
         File database = getApplicationContext().getDatabasePath(DatabaseHelper.DBNAME);
+
+
         if (false == database.exists()) {
             mDBHelper.getReadableDatabase();
             if(copyDatabase(this)) {

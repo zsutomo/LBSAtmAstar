@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">LBSAtmAstar</string>
-    <string name="button1">DAFTAR LOKASI ATM</string>
-    <string name="button2">MAPS</string>
+    <string name="btn_pencarian">PENCARIAN</string>
+    <string name="btn_bantuan">BANTUAN</string>
     <string name="button3">TERDEKAT</string>
     <string name="title_activity_gmaps">Map</string>
 
